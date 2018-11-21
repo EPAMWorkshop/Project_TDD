@@ -13,21 +13,28 @@ import javax.ws.rs.core.MediaType;
 
 
 @Path("/hello")
-public class HelloService
+public class HelloService extends Login implements Service
 {
+	Login l=new Login();
+	
+		
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Override
 	public String askHello() {
-		return "Hello From Srikanth";
+		return "Hello From Narsimlu";
   }
 	@POST
     @Produces(MediaType.TEXT_HTML)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Override
     public String sayHello(@FormParam("name") String name) throws IOException {
 		if (name == null) { return "Hello"; }
 
 		return "Hello " + name;
 
    }
+	
+	
     
 }

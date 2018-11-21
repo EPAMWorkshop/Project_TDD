@@ -15,10 +15,12 @@ import com.epam.app.HelloService;
 
 public class HelloServiceTest {
 	
-/*	private static URI getBaseURI() {
-	    return UriBuilder.fromUri("http://localhost:9000/rest/hello").build();
-	  }
-*/
+	Login l;
+	
+	void setUp() {
+		l=new Login();
+		l.setUserName("Sri");
+	}
 	@Test
 	public void test() {
 		HelloService helloServiceObject = new HelloService();
@@ -28,25 +30,12 @@ public class HelloServiceTest {
 	@Test
 	public void askHelloMethodTest() {
 		HelloService helloServiceObject = new HelloService();
-		assertEquals("Hello From Srikanth",helloServiceObject.askHello());
+		assertEquals("Hello From Narsimlu",helloServiceObject.askHello());
 	}
-/*	
 	@Test
-	public void askHelloServiceTest() {
+	public void testMethod()
+	{
 		
-		//ClientConfig config = new ClientConfig();
-		
-        Client client = ClientBuilder.newClient();
-        WebTarget target = client.target(getBaseURI());
-        
-        String response = target.path("rest").
-                path("hello").
-                request().
-                accept(MediaType.TEXT_PLAIN).
-                get(Response.class)
-                .toString();
-        
-		assertEquals("Hello From Srikanth",response);
 	}
-*/
+
 }
